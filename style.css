@@ -1,0 +1,122 @@
+.page {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+
+}
+
+.page__container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1280px;
+}
+
+.header {
+    margin: 0;
+    border-bottom: 1px solid #545454;
+}
+
+.header__logo {
+    margin: 45px 0 41px 0;
+    padding: 0;
+    width: 173px;
+    height: 33px;
+    background-image: url('./images/logo.svg');
+    background-repeat: no-repeat;
+
+    
+    
+}
+
+.content {
+    margin: 36.25px 0 0;
+}
+
+.profile {
+    margin: 0;
+}
+
+.profile__photo {
+    border-radius: 50%;
+    margin: 0;
+
+}
+
+.profile__info {
+
+}
+
+.profile__name {
+
+}
+
+.profile__edit-button {
+    width: 24px;
+    height: 24px;
+    background-image: url('./images/edit-button.svg');
+
+
+    
+
+}
+
+.profile__profession {
+
+}
+
+.profile__add-button {
+
+}
+
+.gallery {
+    
+}
+
+.gallery__items {
+    list-style: none;
+    
+}
+
+.gallery__item {
+    width: 282px;
+    height: 361px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.gallery__image {
+    width: 282px;
+    height: 282px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.gallery__placeholder {
+    width: 282px;
+    height: 79px;
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 21px;
+    margin: 0;
+
+}
+
+.gallery__item-title {
+
+}
+
+.gallery__like-icon {
+
+}
+
+.footer {
+    margin: 0;
+}
+
+.footer__copyright {
+
+}
