@@ -13,3 +13,13 @@
     padding: 0;
     margin: 40px 0 0;
 }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .modal__form {
+        width: 280px;
+        height: 350px;
+        font-weight: 500;
+         
+
+    }
+}

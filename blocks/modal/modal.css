@@ -3,7 +3,7 @@
 @import url('./__input/modal__input.css');
 @import url('./__save/modal__save.css');
 @import url('./__title/modal__title.css');
-@import url('./_open/modal_open.css');
+
 @import url('./__input/_type/modal__input_type_name.css');
 @import url('./__input/_type/modal__input_type_profession.css');
 
@@ -14,7 +14,8 @@
     top: 0;
     left: 0;
     display: none;
-    margin-top: 148px;
+    padding-top: 148px;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
