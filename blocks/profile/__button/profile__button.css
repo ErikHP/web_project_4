@@ -1,0 +1,7 @@
+.profile__button {
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box; 
+    padding: 0;
+}

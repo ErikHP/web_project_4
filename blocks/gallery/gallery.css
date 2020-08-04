@@ -1,0 +1,12 @@
+@import url('./__image/gallery__image.css');
+@import url('./__item-title/gallery__item-title.css');
+@import url('./__item/gallery__item.css');
+@import url('./__items/gallery__items.css');
+@import url('./__like-icon/gallery__like-icon.css');
+@import url('./__placeholder/gallery__placeholder.css');
+
+.gallery {
+    margin: 0;
+    padding: 0;
+    
+}
