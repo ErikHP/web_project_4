@@ -1,11 +1,10 @@
-@import url('./__button-placeholder/profile__button-placeholder.css');
 @import url('./__button/profile__button.css');
 @import url('./__info/profile__info.css');
 @import url('./__name/profile__name.css');
 @import url('./__photo/profile__photo.css');
 @import url('./__profession/profile__profession.css');
-@import url('./__button/_add/profile__button_add.css');
-@import url('./__button/_edit/profile__button_edit.css');
+@import url('./__button/_type/profile__button_type_add.css');
+@import url('./__button/_type/profile__button_type_edit.css');
 
 .profile {
     margin: 40px 0 50px;
@@ -14,15 +13,7 @@
     
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .profile {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 42px 0 36px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 320px) and (max-width: 1023px) {
     .profile {
         flex-wrap: wrap;
         justify-content: center;
