@@ -10,24 +10,28 @@ const profileProfession = document.querySelector('.profile__profession');
 
 
 
-function toggleModal() {
+function openModal() {
     
     nameInput.value = profileName.textContent;
     professionInput.value = profileProfession.textContent;
-    modal.classList.toggle('modal_open');
+    modal.classList.add('modal_open');
 
 };
 
-editFormButton.addEventListener('click', toggleModal);
-
-closeFormButton.addEventListener('click', function closeModal(){
+function closeModal() {
     modal.classList.remove('modal_open');
-});
+};
+
+
+
+editFormButton.addEventListener('click', openModal);
+
+closeFormButton.addEventListener('click', closeModal);
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     profileName.textContent = nameInput.value;
     profileProfession.textContent = professionInput.value;
-    toggleModal();
+    closeModal();
 });
 
