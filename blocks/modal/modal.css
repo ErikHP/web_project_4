@@ -6,16 +6,33 @@
 
 @import url('./__input/_type/modal__input_type_name.css');
 @import url('./__input/_type/modal__input_type_profession.css');
+@import url('./__input/_type/modal__input_type_card-title.css');
+@import url('./__input/_type/modal__input_type_url.css');
+
+@import url('./__figure/modal__figure.css');
+@import url('./__image/modal__image.css');
+@import url('./__image-title/modal__image-title.css');
+@import url('./__close-button/_type-image/modal__close-button_type-image.css');
+@import url('./__image-placeholder/modal__image-placeholder.css');
+
 
 .modal {
     position: fixed;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    display: none;
+    
     padding: 148px 0 0 20.35px;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: visibility .7s linear, opacity .5s linear;
 }
 
+.modal_button_image {
+    
+    padding: 90px 0;
+}
