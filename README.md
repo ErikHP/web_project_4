@@ -8,6 +8,8 @@ It has Profile section which contains picture and info,
 like name and profession. Now it has function of modifying 
 name and profession. 
 
+UPDATE 1.1: Adding image, Like button and Delete button functionalities were added.
+
 Profile section followed by photo gallery.
 
 This project fully responsive.
