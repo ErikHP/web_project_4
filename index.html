@@ -48,8 +48,12 @@
         
         <form action="#" method="POST" name="modal_form" class="modal__form"> 
             <h3 class="modal__title">Edit profile</h3> 
-            <input type="text" class="modal__input modal__input_type_name" name="modal__input_type_name" value="">
-            <input type="text" class="modal__input modal__input_type_profession" name="modal__input_type_profession" value="">
+            <input id="profile-name" type="text" class="modal__input modal__input_type_name" name="modal__input_type_name" minlength="2" maxlength="40" required>
+            <span id="profile-name-error" class="modal__error"></span>
+
+            <input id="profile-profession" type="text" class="modal__input modal__input_type_profession" name="modal__input_type_profession" minlength="2" maxlength="200" required>
+            <span id="profile-profession-error" class="modal__error"></span>
+
             <button type="submit" class="modal__save">Save</button>
         </form>
         <button type="button" class="modal__close-button"  aria-label="Close"></button>
@@ -59,8 +63,12 @@
         
         <form action="#" method="POST" name="modal_form modal__form_type_card" class="modal__form"> 
             <h3 class="modal__title">New Place</h3> 
-            <input type="text" class="modal__input modal__input_type_card-title" name="modal__input_type_card-title"  placeholder="Title" required>
-            <input type="url" class="modal__input modal__input_type_url" name="modal__input_type_url"  placeholder="Image link" required>
+            <input id="place-title" type="text" class="modal__input modal__input_type_card-title" name="modal__input_type_card-title"  placeholder="Title" minlength="2" maxlength="30" required>
+            <span id="place-title-error" class="modal__error"></span>
+
+            <input id="place-url" type="url" class="modal__input modal__input_type_url" name="modal__input_type_url"  placeholder="Image link" required>
+            <span id="place-url-error" class="modal__error"></span>
+
             <button type="submit" class="modal__save">Create</button>
         </form>
         <button type="button" class="modal__close-button"  aria-label="Close"></button>
