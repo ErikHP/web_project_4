@@ -10,6 +10,8 @@ name and profession.
 
 UPDATE 1.1: Adding image, Like button and Delete button functionalities were added.
 
+UPDATE 1.2: Form Validation feature implemented
+
 Profile section followed by photo gallery.
 
 This project fully responsive.

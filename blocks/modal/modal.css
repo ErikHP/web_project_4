@@ -15,6 +15,9 @@
 @import url('./__close-button/_type-image/modal__close-button_type-image.css');
 @import url('./__image-placeholder/modal__image-placeholder.css');
 
+@import url('./__error/modal__error.css');
+@import url('./__input/_type/modal__input_type_error.css');
+
 
 .modal {
     position: fixed;
