@@ -61,7 +61,7 @@
     </div>
     <div class="modal modal_button_add">
         
-        <form action="#" method="POST" name="modal_form modal__form_type_card" class="modal__form"> 
+        <form action="#" method="POST" name="modal_form" class="modal__form modal__form-add"> 
             <h3 class="modal__title">New Place</h3> 
             <input id="place-title" type="text" class="modal__input modal__input_type_card-title" name="modal__input_type_card-title"  placeholder="Title" minlength="2" maxlength="30" required>
             <span id="place-title-error" class="modal__error"></span>
@@ -71,7 +71,7 @@
 
             <button type="submit" class="modal__save">Create</button>
         </form>
-        <button type="button" class="modal__close-button"  aria-label="Close"></button>
+        <button type="button" class="modal__close-button modal__close-button-add modal__close-card"  aria-label="Close"></button>
         
     </div>
     <div class="modal modal_button_image">
@@ -83,7 +83,7 @@
             </figure> 
             
       
-            <button type="button" class="modal__close-button modal__close-button_type-image"  aria-label="Close"></button>
+            <button type="button" class="modal__close-button modal__close-button-image modal__close-button_type-image"  aria-label="Close"></button>
         </div>
     </div>
     <template class="card-template">

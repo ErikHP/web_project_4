@@ -1,6 +1,6 @@
 // Wrappers
 const form = document.querySelector('.modal__form');
-const formNewPlace = document.querySelectorAll('.modal__form')[1];
+const formNewPlace = document.querySelector('.modal__form-add');
 const imageModal = document.querySelector('.modal_button_image');
 
 // Buttons
@@ -10,9 +10,9 @@ const modalEdit = document.querySelector('.modal_button_edit');
 
 const addFormButton = document.querySelector('.profile__button_type_add');
 const modalNewPlace = document.querySelector('.modal_button_add');
-const modalNewPlaceCloseButton = document.querySelectorAll('.modal__close-button')[1];
+const modalNewPlaceCloseButton = document.querySelector('.modal__close-button-add');
 
-const modalImageCloseButton = document.querySelectorAll('.modal__close-button')[2];
+const modalImageCloseButton = document.querySelector('.modal__close-button-image');
 
 //Inputs
 const nameInput = document.querySelector('.modal__input_type_name');
@@ -108,7 +108,8 @@ const initialCards = [
   const cardTemplate = document.querySelector('.card-template').content.querySelector('.gallery__item');
   const list = document.querySelector('.gallery__items');
 
-
+  const modalImage = imageModal.querySelector('.modal__image');
+  const modalImageTitle = imageModal.querySelector('.modal__image-title');
 
   function createCard(data) {
     const cardElement = cardTemplate.cloneNode(true);
@@ -121,15 +122,14 @@ const initialCards = [
       cardImage.alt = data.name;
   
       cardImage.addEventListener('click', () => {
-        const modalImage = imageModal.querySelector('.modal__image');
-        const modalImageTitle = imageModal.querySelector('.modal__image-title');
+        
     
         modalImageTitle.textContent = data.name;
         modalImage.src = data.link;
         modalImage.alt = data.name;
     
         toggleModal(imageModal);
-      });
+      })
 
 
     // Card Like Button
@@ -137,7 +137,7 @@ const initialCards = [
 
     function toggleLikeButton(e) {
         e.target.classList.toggle('gallery__like-button_active');
-    };
+    }
     cardLikeButton.addEventListener('click', toggleLikeButton);
 
     const cardDeleteButton = cardElement.querySelector('.gallery__delete-button');
@@ -149,11 +149,11 @@ const initialCards = [
     cardDeleteButton.addEventListener('click', deleteCard);
 
     return cardElement;
-    };
+    }
 
     function renderCard(data) {
         list.prepend(createCard(data));
-    };
+    }
   
     // Initial Cards
     initialCards.forEach(cardsData => {
@@ -166,6 +166,6 @@ const initialCards = [
         imageTitle.value = imageTitle.textContent;
         imageUrl.value = imageUrl.textContent;
         toggleModal(modalNewPlace);
-    };
+    }
   
     formNewPlace.addEventListener('submit', formNewPlaceFunction);
