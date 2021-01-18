@@ -1,3 +1,20 @@
+import FormValidator from './FormValidator.js';
+import Card from './Card.js';
+
+const defaultConfig = {
+    formSelector: ".modal__form",
+    inputSelector: ".modal__input",
+    submitButtonSelector: ".modal__save",
+    inactiveButtonClass: "modal__save_disabled",
+    inputErrorClass: "modal__input_type_error",
+    errorClass: "modal__error_visible"
+}
+
+
+
+
+
+
 // Wrappers
 const form = document.querySelector('.modal__form');
 const formNewPlace = document.querySelector('.modal__form-add');
@@ -152,7 +169,9 @@ const initialCards = [
     }
 
     function renderCard(data) {
-        list.prepend(createCard(data));
+        const card = new Card(data, '.card-template' )
+        //list.prepend(createCard(data));
+        list.prepend(generateCard());
     }
   
     // Initial Cards
