@@ -112,7 +112,7 @@ const initialCards = [
   const modalImageTitle = imageModal.querySelector('.modal__image-title');
 
   function createCard(data) {
-    const cardElement = cardTemplate.cloneNode(true);
+      const cardElement = cardTemplate.cloneNode(true);
 
       const cardImage = cardElement.querySelector('.gallery__image');
       const cardTitle = cardElement.querySelector('.gallery__item-title');
