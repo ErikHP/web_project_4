@@ -177,7 +177,7 @@ const initialCards = [
     function renderCard(data) {
         const card = new Card(data, '.card-template' )
         //list.prepend(createCard(data));
-        list.prepend(generateCard());
+        list.prepend(card.generateCard());
     }
   
     // Initial Cards
