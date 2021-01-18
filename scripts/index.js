@@ -10,23 +10,29 @@ const defaultConfig = {
     errorClass: "modal__error_visible"
 }
 
+const modalNewPlace = document.querySelector('.modal_button_add');
+const modalEdit = document.querySelector('.modal_button_edit');
 
-
-
-
-
-// Wrappers
 const form = document.querySelector('.modal__form');
 const formNewPlace = document.querySelector('.modal__form-add');
+
+const editFormValidator = new FormValidator(defaultConfig, form);
+const addFormValidator = new FormValidator(defaultConfig, formNewPlace);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
+
+// Wrappers
+
 const imageModal = document.querySelector('.modal_button_image');
 
 // Buttons
 const editFormButton = document.querySelector('.profile__button_type_edit');
 const closeFormButton = document.querySelector('.modal__close-button');
-const modalEdit = document.querySelector('.modal_button_edit');
+
 
 const addFormButton = document.querySelector('.profile__button_type_add');
-const modalNewPlace = document.querySelector('.modal_button_add');
+
 const modalNewPlaceCloseButton = document.querySelector('.modal__close-button-add');
 
 const modalImageCloseButton = document.querySelector('.modal__close-button-image');
