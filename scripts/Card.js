@@ -31,17 +31,18 @@ class Card {
     }
 
     _getCardTemplate() {
-        const cardTemplate = document.querySelector(this._templateSelector).content.querySelector('.gallery__item');
+        const cardTemplate = document.querySelector(this._templateSelector).content.querySelector('.gallery__item').cloneNode(true);
 
         return cardTemplate;
     }
 
-    _handleLikeButton() {
+    _handleLikeButton(e) {
         e.target.classList.toggle('gallery__like-button_active');
     }
 
     _handleDeleteButton() {
-        list.removeChild(this._card);
+        this._card.remove();
+
     }
 
     _handlePreviewImage() {
@@ -63,14 +64,14 @@ class Card {
         const cardImage = this._card.querySelector('.gallery__image');
 
         cardLikeButton.addEventListener('click', this._handleLikeButton);
-        cardDeleteButton.addEventListener('click', this._handleDeleteButton);
-        cardImage.addEventListener('click', this._handlePreviewImage);
+        cardDeleteButton.addEventListener('click', this._handleDeleteButton.bind(this));
+        cardImage.addEventListener('click', this._handlePreviewImage.bind(this));
     }
 
     generateCard() {
         
 
-        this._card = cardTemplate.cloneNode(true);
+        this._card = this._getCardTemplate();
 
         const cardImage = this._card.querySelector('.gallery__image');
         const cardTitle = this._card.querySelector('.gallery__item-title');
@@ -78,6 +79,10 @@ class Card {
         cardTitle.textContent = this._name;
         cardImage.src = this._link;
         cardImage.alt = this._name;
+
+        
+
+        this._setEventListeners();
 
         return this._card;
         }
