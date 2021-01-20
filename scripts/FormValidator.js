@@ -45,26 +45,23 @@ class FormValidator {
         }
     }
 
-    enableValidation({formSelector, inputSelector, submitButtonSelector,...rest}) {
-        
-
-        
+    enableValidation() {
+               
         this._form.addEventListener('submit', (e) => {
-                e.preventDefault();
-            })
+            e.preventDefault();
+        })
 
-            const inputs = [...this._form.querySelectorAll(this._inputSelector)];
-            const button = this._form.querySelector(this._submitButtonSelector);
+        const inputs = [...this._form.querySelectorAll(this._inputSelector)];
+        const button = this._form.querySelector(this._submitButtonSelector);
 
-            inputs.forEach((input) => {
-                input.addEventListener('input', () => {
-                    //checkInputValidity
-                    checkInputValidity(input, this._form, rest);
-                    //toggleButtonState
-                    toggleButtonState(inputs, button, rest);
-                })
+        inputs.forEach((input) => {
+            input.addEventListener('input', () => {
+                //checkInputValidity
+                checkInputValidity(input, this._form, rest);
+                //toggleButtonState
+                toggleButtonState(inputs, button, rest);
             })
-        
+        })
     }
 }
 
