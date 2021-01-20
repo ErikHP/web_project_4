@@ -1,5 +1,5 @@
 class FormValidator {
-    constractor(settings, form) {
+    constructor(settings, form) {
         this._inputSelector = settings.inputSelector;
         this._submitButtonSelector = settings.submitButtonSelector;
         this._inactiveButtonClass = settings.inactiveButtonClass;
