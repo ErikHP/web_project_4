@@ -54,6 +54,7 @@ class Card {
         modalImage.alt = this._name;
     
         toggleModal(imageModal);
+        
     }
 
     _setEventListeners() {
