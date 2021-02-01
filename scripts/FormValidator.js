@@ -32,6 +32,8 @@ class FormValidator {
         }
     }
 
+    
+
     _toggleButtonState() {
         const isValid = inputs.every((input) => input.validity.valid)
         if (isValid) {
