@@ -28,7 +28,7 @@ export default class Card {
  
   
   _toggleLikeButton(e) { 
-    e.target.classList.toggle('.gallery__like-button_active'); 
+    e.target.classList.toggle('gallery__like-button_active'); 
   } 
  
  
