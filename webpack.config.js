@@ -2,12 +2,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
+module.exports = (env) => {
+  const config = {
   entry: { main: "./scripts/index.js" },
   output: {
-    publicPath: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "public"),
     filename: "main.js",
-    
+    publicPath: env.production ? "/around-react/" : "/",
   },
   module: {
     rules: [
@@ -44,5 +45,6 @@ module.exports = {
       template: "index.html"
     }),
     new MiniCssExtractPlugin()
-  ]
+  ], }
+return config;
 }; 
