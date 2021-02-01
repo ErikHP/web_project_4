@@ -40,8 +40,4 @@ module.exports = {
     }),
     new MiniCssExtractPlugin()
   ]
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> bb10c605acadeac4b72d95309271fa093e82f764
