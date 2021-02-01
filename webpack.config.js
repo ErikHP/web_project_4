@@ -2,13 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = (env) => {
-  const config = {
-  entry: { main: "./scripts/index.js" },
+module.exports = {
+  entry: { main: "./src/pages/index.js" },
   output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "main.js",
-    publicPath: env.production ? "/around-react/" : "/",
+    path: path.resolve(__dirname, "dist"),
+    filename: "main.js"
   },
   module: {
     rules: [
@@ -19,32 +17,27 @@ module.exports = (env) => {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1
-            }
-          },
-          "postcss-loader"
-        ]
+        loader: [MiniCssExtractPlugin.loader,
+        {loader: "css-loader", options: {importLoaders: 1} }, "postcss-loader"]
       },
       {
         test: /\.html$/,
         loader: "html-loader",
       },
       {
-        test: /\.(png|svg|jpg|gif|woff2|woff)$/,
-        loader: "file-loader",
-      },
+        test: /\.(png|svg|jpg|gif)$/,
+        loader: 'file-loader?name=./images/[name].[ext]'
+   },
+   {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=./vendor/[name].[ext]',
+   },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html"
+      template: "src/index.html"
     }),
     new MiniCssExtractPlugin()
-  ], }
-return config;
-}; 
+  ]
+};
