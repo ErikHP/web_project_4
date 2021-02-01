@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Around The U.S. - Jacques Cousteau</title>
-    <link rel="stylesheet" href="./pages/index.css">
+    
 
 </head>
 
@@ -48,7 +48,7 @@
     </div>
     <div class="modal modal_button_edit">
 
-        <form action="#" method="POST" name="modal_form" class="modal__form">
+        <form action="#" method="POST" name="modal_form" class="modal__form modal__form-edit" novalidate>
             <h3 class="modal__title">Edit profile</h3>
             <input id="profile-name" type="text" class="modal__input modal__input_type_name"
                 name="modal__input_type_name" minlength="2" maxlength="40" required>
@@ -65,7 +65,7 @@
     </div>
     <div class="modal modal_button_add">
 
-        <form action="#" method="POST" name="modal_form" class="modal__form modal__form-add">
+        <form action="#" method="POST" name="modal_form" class="modal__form modal__form-add" novalidate>
             <h3 class="modal__title">New Place</h3>
             <input id="place-title" type="text" class="modal__input modal__input_type_card-title"
                 name="modal__input_type_card-title" placeholder="Title" minlength="2" maxlength="30" required>
@@ -106,7 +106,7 @@
     </template>
 
 
-    <script type="module" src="./scripts/index.js"></script>
+    
 
 
 </body>
