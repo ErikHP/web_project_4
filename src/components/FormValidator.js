@@ -2,6 +2,8 @@ class FormValidator {
   constructor(settings, formElement) {
     this._settings = settings;
     this._formElement = formElement;
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector));
+    this._buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector);
   }
   // Private Show Error Message Function
   _showErrorMessage(inputElement, errorMessage) {
@@ -36,19 +38,18 @@ class FormValidator {
   }
 
   disableSubmitButton() {
-    const buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector);
-    buttonElement.disabled = true;
-    buttonElement.classList.add(this._settings.inactiveButtonClass);
+    
+    this._buttonElement.disabled = true;
+    this._buttonElement.classList.add(this._settings.inactiveButtonClass);
   }
 
   // Private Toggle Button State Function
   _toggleButtonState() {
-    const inputList = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector));
-    const buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector);
+   
 
-      if(this._isValid(inputList)) {
-        buttonElement.disabled = false;
-        buttonElement.classList.remove(this._settings.inactiveButtonClass);
+      if(this._isValid(this._inputList)) {
+        this._buttonElement.disabled = false;
+        this._buttonElement.classList.remove(this._settings.inactiveButtonClass);
       }else {
         this.disableSubmitButton();
     }
@@ -56,13 +57,12 @@ class FormValidator {
 
   // Private Inputs Event Lister
   _inputEventListeners() {
-    const inputList = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector));
-    const buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector);
+    
 
-    inputList.forEach(inputElement => {
+    this._inputList.forEach(inputElement => {
       inputElement.addEventListener('input', () => {
         this.checkInputValidity(inputElement);
-        this._toggleButtonState(inputList, buttonElement,  this._settings.inactiveButtonClass);
+        this._toggleButtonState(this._inputList, this._buttonElement,  this._settings.inactiveButtonClass);
       });
     });
   }
