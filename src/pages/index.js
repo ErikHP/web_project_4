@@ -22,8 +22,9 @@ import {
 const imageModal = new PopupWithImage('.modal_type_image');
 imageModal.setEventListeners();
 
-function handleCardClick(name, link) {
-  imageModal.open({name, link});
+function handleCardClick(data) {
+  imageModal.open({name: data.name, link: data.link});
+  
 }
 
 
