@@ -24,7 +24,6 @@ imageModal.setEventListeners();
 
 function handleCardClick(data) {
   imageModal.open({name: data.name, link: data.link});
-  
 }
 
 
@@ -73,9 +72,9 @@ function addCardSubmitHandler(data) {
   
 // Render Card 
 function renderCard(data) {  
-  const card = new Card(data, '.card-template', handleCardClick); 
-  const cardElement = card.createCard(); 
-  cardsList.addItem(cardElement); 
+  const card = new Card(data, '.card-template', handleCardClick);
+  const cardElement = card.createCard();
+  cardsList.addItem(cardElement);
 }  
   
 // Cards List
@@ -84,7 +83,7 @@ const cardsList = new Section({
   renderer: renderCard,
 }, cardContainerSelector)
 
-// // Initial Cards Data  
+// // Initial Cards Data
 cardsList.renderer();
   
 // Form Validation
