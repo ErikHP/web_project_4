@@ -72,10 +72,10 @@ const editProfilePopup = new PopupWithForm({
     api.setUserInfo({
         name: data.nameInput,
         about: data.aboutInput,
-        avatar: profileAvatar.src
+       
       })
-      .then(() => {
-        userInfo.setUserInfo(profileInputName.value, profileInputAbout.value, profileAvatar.src)
+      .then((userData) => {
+        userInfo.setUserInfo(userData.name, userData.about, userData.avatar)
         handleLoading(false, editProfileModal, 'Save')
         editProfilePopup.close();
       })
@@ -85,8 +85,8 @@ const editProfilePopup = new PopupWithForm({
 
 editProfileButton.addEventListener('click', () => {
   const currentUserInfo = userInfo.getUserInfo();
-  profileInputName.value = currentUserInfo.name;
-  profileInputAbout.value = currentUserInfo.about;
+  profileInputName.value = "";
+  profileInputAbout.value = "";
   editProfilePopup.open();
 })
 
@@ -102,15 +102,15 @@ const editAvatarPopup = new PopupWithForm({
         avatar: data.avatar
       })
       .then((res) => {
-        profileAvatar.src = res.avatar;
+        userInfo.setUserAvatar(res.avatar);
         handleLoading(false, editAvatarModal, 'Save');
         editAvatarPopup.close();
-      })
+      }).catch(err => console.log(err))
   }
 })
 
 editAvatarButton.addEventListener('click', () => {
-  editAvatarPopup.open()
+  editAvatarPopup.open();
   editAvatarFormValidator.disableSubmitButton();
 })
 
@@ -127,13 +127,13 @@ deleteCardPopup.setEventListeners();
 api.getAppInfo()
   .then(([userData, cardListData]) => {
     const userIdInfo = userData._id;
-    userInfo.setUserInfo(userData.name, userData.about)
-    profileAvatar.src = userData.avatar;
+    userInfo.setUserInfo(userData.name, userData.about, userData.avatar);
 
     const cardsList = new Section({
       data: cardListData,
       renderer: addNewCards
     }, cardGrid)
+    
 
     cardsList.renderItems();
 
