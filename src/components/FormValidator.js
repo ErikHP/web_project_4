@@ -66,7 +66,15 @@ class FormValidator {
       });
     });
   }
-  
+  // Clearing Error Method
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      this._hideErrorMessage(inputElement);
+    });
+
+    this._toggleButtonState();
+  }
+
 
   // Public Enable Validation Function
   enableValidation() {

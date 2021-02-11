@@ -85,8 +85,7 @@ const editProfilePopup = new PopupWithForm({
 
 editProfileButton.addEventListener('click', () => {
   const currentUserInfo = userInfo.getUserInfo();
-  profileInputName.value = "";
-  profileInputAbout.value = "";
+  editFormValidator.resetValidation();
   editProfilePopup.open();
 })
 
@@ -111,6 +110,7 @@ const editAvatarPopup = new PopupWithForm({
 
 editAvatarButton.addEventListener('click', () => {
   editAvatarPopup.open();
+  editAvatarFormValidator.resetValidation();
   editAvatarFormValidator.disableSubmitButton();
 })
 
